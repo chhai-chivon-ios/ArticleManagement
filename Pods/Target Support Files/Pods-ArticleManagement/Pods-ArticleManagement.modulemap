@@ -1,6 +1,0 @@
-framework module Pods_ArticleManagement {
-  umbrella header "Pods-ArticleManagement-umbrella.h"
-
-  export *
-  module * { export * }
-}
