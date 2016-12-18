@@ -301,7 +301,6 @@ extension NewsfeedViewController:ArticleView {
         self.pagination = pagination
         newsfeedListView?.isHidden = false
         emptyView?.isHidden = true;
-        self.isLoading = false
         DispatchQueue.main.async{
             self.newsfeedListView.reloadData()
         }
