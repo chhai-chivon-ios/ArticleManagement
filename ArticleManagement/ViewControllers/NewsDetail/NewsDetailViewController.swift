@@ -20,8 +20,8 @@ class NewsDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let featureImgUrl = article?.image{
-            SonadevImageCacher.sharedInstance.getImage(url: URL(string:featureImgUrl)!, completion: {
+        if let featureImgUrl = URL(string: (article?.image!)!){
+            SonadevImageCacher.sharedInstance.getImage(url: featureImgUrl, completion: {
                 image, error in
                 if error != nil{
                     
