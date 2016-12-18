@@ -10,9 +10,10 @@ import XCTest
 @testable import ArticleManagement
 
 class ArticleManagementTests: XCTestCase {
-    
+    var userService:UserService? = nil
     override func setUp() {
         super.setUp()
+       userService = UserService()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -21,7 +22,16 @@ class ArticleManagementTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testGetUsers() {
+        XCTAssert(true, "Should be true")
+        userService?.getUsers(callBack: {
+            user in
+            XCTAssertNotNil(user, "User is not nil")
+            for us in user{
+                print(us.email)
+                XCTAssert(us.email == "sovathana.phat@gmail.com", "Should be can retrieve")
+            }
+        })
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
